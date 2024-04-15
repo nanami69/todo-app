@@ -1,6 +1,6 @@
 import { Component, onMount, createSignal } from 'solid-js';
 import { db } from './firebaseConfig';
-import { collection, getDocs, addDoc } from 'firebase/firestore';
+import { collection, getDocs,} from 'firebase/firestore';
 
 import styles from './App.module.css';
 
@@ -21,7 +21,9 @@ const App: Component = () => {
 
   return (
     <div class={styles.App}>
-      <Header />
+      <Header
+        fetchTodos={fetchTodos}
+      />
       <TodoList
         todos={todos()}
       />
